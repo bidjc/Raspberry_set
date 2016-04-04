@@ -1,10 +1,12 @@
 #########################################################################
-# File Name: upload1.sh
+# File Name: upload.sh
 # Author: dengguangjie
 # mail: 563200085@qq.com
 # Created Time: 2016年04月04日 星期一 11时14分47秒
 #########################################################################
 #!/bin/bash
+Nmb=$#
+echo "number is $Nmb"
 echo $1
 if [ ! -n "$1" ] ;then
 	echo "eg: upload.sh add filename\nupload.sh init"
