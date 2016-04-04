@@ -17,7 +17,7 @@ upload.sh test			×测试是否可以连接git
 upload.sh init			×初始化
 upload.sh bound bidjc Raspberry	×绑定远程库
 upload.sh add filename describe ×添加一个文件到远程库
-upload.sh addall filename dcrbe ×添加当前目录下所以文件到远程库
+upload.sh addall dcrbe ×添加当前目录下所以文件到远程库
 upload.sh down                  ×从远程下载
 ##########################
 "
@@ -29,14 +29,14 @@ upload.sh down                  ×从远程下载
 CheckCmd(){
 		#echo "aa = ${a[$num]}"
 	var=${a[$nnum]}
-	echo "Check cmd:$var"
+#	echo "Check cmd:$var"
 	echo "current var: $var"
 	if [ $var == "test" ];then
-    	echo "ssh -T git@github.com"
+    	echo ">>>>>ssh -T git@github.com"
     	ssh -T git@github.com   #测试是否连接github成功
 		nnum=$[$nnum+1]
 	elif [ $var == "init" ];then
-    	echo "git init"
+    	echo ">>>>>git init"
 	    git init  #此时git会在这个文件夹下创建一个隐藏目录，这个目录就是本地库了
 		nnum=$[$nnum+1]
 	elif [ $var == "bound" ];then
@@ -53,7 +53,7 @@ CheckCmd(){
 		value1=${a[$nnum+1]}
 		value2=${a[$nnum+2]}
     	if [ ! -n "$value1" -o ! -n "$value2" ];then
-        	echo "eg: upload.sh add filename file discribe"
+        	echo "eg: upload.sh add filename filediscribe"
 	        exit
     	fi  
 	    git add $value1
@@ -72,6 +72,7 @@ CheckCmd(){
 		nnum=$[$nnum+2]
 	else
 		nnum=$[$nnum+1]
+		CheckVarNum 0
 fi
 }
 PrintVar(){
@@ -87,7 +88,7 @@ PrintVar(){
 	while [[ $nnum < $Nmb ]]
 	do
 		a1=${a[$nnum]}
-		echo "var $num: $a1"
+		echo "+++++var $num: $a1"
 		CheckCmd
 		let num+=1
 	#	echo "nnum=[$nnum]	$Nmb=[$Nmb]"
