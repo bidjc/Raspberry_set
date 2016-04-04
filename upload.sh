@@ -7,7 +7,8 @@
 #!/bin/bash
 Nmb=$#
 PrintVar(){
-	for i in $1;do
+	aa=$1
+	for i in $1[@];do
 		echo $i
 	done
 }
