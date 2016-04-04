@@ -34,6 +34,14 @@ elif [ $1 == "add" ];then
 	git add $2
 	git commit -m "$3"
 	git push origin master
+elif [ $1 == "addall" ];then
+    if [ ! -n "$2" ];then
+        echo "eg: upload.sh addall discribe"
+        exit
+    fi  
+    git add .
+    git commit -m "$2"
+    git push origin master
 fi
 
 #git remote add origin git@github.com:bidjc/Raspberry.git
