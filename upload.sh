@@ -17,7 +17,7 @@ upload.sh test			×测试是否可以连接git
 upload.sh init			×初始化
 upload.sh bound bidjc Raspberry	×绑定远程库
 upload.sh add filename describe ×添加一个文件到远程库
-upload.sh addall dcrbe ×添加当前目录下所以文件到远程库
+upload.sh addall dcrbe 			×添加当前目录下所以文件到远程库
 upload.sh down                  ×从远程下载
 ##########################
 "
