@@ -6,6 +6,13 @@
 #########################################################################
 #!/bin/bash
 Nmb=$#
+PrintVar(){
+	for i in $1;do
+		echo $i
+	done
+}
+a=($@)
+PrintVar $a
 echo "number is $Nmb"
 echo $1
 if [ ! -n "$1" ] ;then
